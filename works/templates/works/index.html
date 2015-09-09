@@ -1,0 +1,9 @@
+{% if new_archieve_list %}
+	<ul>
+		{% for work in new_archieve_list %}
+			<li><a href="/works/{{ work.id }}/">{{ work.title }}</a></li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<p>募集バイト情報はありません。</p>
+{% endif %}
