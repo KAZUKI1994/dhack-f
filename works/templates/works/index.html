@@ -1,7 +1,10 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" href="{% static 'works/style.css' %}" />
 {% if new_archieve_list %}
 	<ul>
 		{% for work in new_archieve_list %}
-			<li><a href="/works/{{ work.id }}/">{{ work.title }}</a></li>
+			<li><a href="{% url 'works:detail' work.id %}">{{ work.title }}</a></li>
 		{% endfor %}
 	</ul>
 {% else %}

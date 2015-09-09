@@ -1,11 +1,13 @@
-<h1>{{ work.title }}</h1>
+<h1>{{ works.title }}</h1>
 <ul>
-	<li>募集者 : {{ work.publisher }}</li>
-	<li>募集内容 : {{ work.content }}</li>
-	<li>募集条件 : {{ work.condition }}</li>
-	<li>募集校地 : {{ work.canvas }}</li>
-	<li>実施場所 : {{ work.location }}</li>
-	<li>開始日時 : {{ work.work_start }}</li>
-	<li>終了日時 : {{ work.work_finish }}</li>
-	<li>報酬 : {{ work.money_kind }}{{ work.money_amount }}</li>
+	<li>募集者 : {{ works.publisher }}</li>
+	<li>募集内容 : {{ works.content }}</li>
+	<li>募集条件 : {{ works.condition }}</li>
+	<li>募集校地 : {{ works.canvas }}</li>
+	<li>実施場所 : {{ works.location }}</li>
+	<li>開始日時 : {{ works.work_start }}</li>
+	<li>終了日時 : {{ works.work_finish }}</li>
+	<li>報酬 : {{ works.money_kind }}{{ works.money_amount }}</li>
 </ul>
+<input type="submit" value="申し込む"></input>
+<input type="button" value="戻る"></input>
