@@ -4,7 +4,7 @@ from django.views import generic
 from django.template import RequestContext, loader
 
 from .models import Works
-from .forms import NameForm
+from .forms import UserForm
 
 # Create your views here.
 #トップ画面
@@ -38,3 +38,8 @@ def get_name(request):
 
 #バイトフォーム画面
 #class jobform(View):
+
+def userform(request):
+    form = UserForm()
+
+    return render(request,'works/jobform.html',{'form':form})
