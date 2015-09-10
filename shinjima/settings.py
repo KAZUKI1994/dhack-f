@@ -40,7 +40,7 @@ INSTALLED_APPS = (
     'works',
     'mail',
     'bootstrap3',
-    'bootstrapform'
+    'bootstrapform',
 )
 
 MIDDLEWARE_CLASSES = (
