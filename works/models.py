@@ -6,7 +6,6 @@ from django.utils import timezone
 
 class Works(models.Model):
 	IMADE = "IM"
-
 	TANABE = "TN"
 	CANPUS_CHOICE = (
 		(IMADE , u'今出川'),
@@ -29,7 +28,7 @@ class Works(models.Model):
 	pub_mail = models.EmailField(max_length=254)
 	content = models.TextField()
 	condition = models.CharField(max_length=100)
-	canpus = models.CharField(max_length=2, choices=CANPUS_CHOICE)
+	canvas = models.CharField(max_length=2, choices=CANPUS_CHOICE)
 	location = models.CharField(max_length=100)
 	work_period = models.DateField()
 	dead_line = models.DateField()
