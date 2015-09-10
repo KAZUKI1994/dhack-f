@@ -2,6 +2,7 @@ from django.shortcuts import render, render_to_response, get_object_or_404
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.views import generic
 from django.template import RequestContext, loader
+from django.templatetags.static import static
 
 from .models import Works
 from .forms import NameForm
@@ -13,6 +14,14 @@ class IndexView(generic.ListView):
 	#get_template_names="base.html"
 	context_object_name="new_archieve_list"
 	#############
+
+	icon_images = {
+		0 : static("images/img0.png"),
+		1 : static("images/img1.png"),
+		2 : static("images/img2.png"),
+		3 : static("images/img3.png"),
+		4 : static("images/img4.png"),
+	}
 
 
 	def get_queryset(self):

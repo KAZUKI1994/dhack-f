@@ -17,7 +17,18 @@
             <div class="list-group">
               <a href="/works/{{ work.id }}" class="list-group-item">
                 <h4 class="list-group-item-heading">
-                <img src="{% static 'images/hurasuko.png' %}"  class="img-responsive" width="100px" height="100px" alt="a" style="margin:0 auto">
+                <!-- imageを出力 -->
+                {% if work.category == 0 %}
+                <img src="{% static 'images/img0.png' %}"  class="img-responsive" width="100px" height="100px" alt="a" style="margin:0 auto">
+                {% elif work.category == 1 %}
+                	<img src="{% static 'images/img1.png' %}"  class="img-responsive" width="100px" height="100px" alt="a" style="margin:0 auto">
+                {% elif work.category == 2 %}
+                	<img src="{% static 'images/img2.png' %}"  class="img-responsive" width="100px" height="100px" alt="a" style="margin:0 auto">
+                {% elif work.category == 3 %}
+                	<img src="{% static 'images/img3.png' %}"  class="img-responsive" width="100px" height="100px" alt="a" style="margin:0 auto">
+                {% else %}
+                	<img src="{% static 'images/img4.png' %}"  class="img-responsive" width="100px" height="100px" alt="a" style="margin:0 auto">
+                {% endif %}
                 </h4>
                 <p class="list-group-item-text" align="center">{{ work.pay }}</p>
               </a>
@@ -32,26 +43,30 @@
     
     
       <div id="categoly">
-          <h1>カテゴリー</h1>
+        <h1>カテゴリー</h1>
         <div class="row">
-          <div class="col-md-3" align="center"><a href="category-hikennsya.html"><img src="hurasuko.png" width="10px" height="10px" alt="a">
-            被験者バイト</a>
+          {% for item in range(5) %}
+	          <div class="col-md-3" align="center"><a href="{% url %}"><img src="hurasuko.png" width="10px" height="10px" alt="a">
+	            被験者バイト</a>
           </div>
-          <div class="col-md-3" align="center"><a href=""><img src="food.png" width="10px" height="10px" alt="a">
+          { % forend %}
+          <!--
+          <div class="col-md-3" align="center"><a href="{% %}"><img src="food.png" width="10px" height="10px" alt="a">
             生協バイト</a>
           </div>
-          <div class="col-md-3" align="center"><a href=""><img src="PC.png" width="10px" height="10px" alt="a">
+          <div class="col-md-3" align="center"><a href="{% %}"><img src="PC.png" width="10px" height="10px" alt="a">
             PCバイト</a>
           </div>
-          <!--fontAwesomeで入れたいのがあったけど入れ方がわからず-->
-          <div class="col-md-3" align="center"><a href=""><img src="kurumaisu_360.png" width="10px" height="10px" alt="a">
+          <div class="col-md-3" align="center"><a href="{% %}"><img src="kurumaisu_360.png" width="10px" height="10px" alt="a">
             補助バイト</a>
           </div>
+
           <div class="col-md-3" align="center"><a href=""><img src="clover_360.png" width="10px" height="10px" alt="a">
             京田辺</a>
           </div>
           <div class="col-md-3" align="center"><a href=""><img src="heart_360.png" width="10px" height="10px" alt="a">
             今出川</a>
+            -->
           </div>
         </div>
       </div>
