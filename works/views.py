@@ -8,9 +8,12 @@ from .forms import NameForm
 
 # Create your views here.
 #トップ画面
-class IndexView(generic.ListView):
+class IndexView(generic.TemplateView):
 	template_name="works/index.html"
+	#get_template_names="base.html"
 	context_object_name="new_archieve_list"
+	#############
+
 
 	def get_queryset(self):
 		return Works.objects.order_by('work_start')[:10]
@@ -20,9 +23,6 @@ class DetailView(generic.DetailView):
 	model = Works
 	template_name = "works/detail.html"
 
-class NameAdminView(generic.DetailView):
-	model = Works
-	template_name = "works/name.html"
 
 #ユーザー情報
 def get_name(request):

@@ -1,4 +1,3 @@
-{% extends "admin/base.html" %}
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
@@ -41,7 +40,7 @@
 
     <div class="collapse navbar-collapse target">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="{% url 'admin:index' %}">ホーム</a></li>
+        <li class="active"><a href="{% url 'works:index' %}">ホーム</a></li>
         <li><a href="register.html">新規登録</a></li>
         <li><a href="login.html">ログイン</a></li>
         <li><a href="bite.html">バイト募集</a></li>
