@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, render_to_response, get_object_or_404
 from django.http import HttpResponse, Http404, HttpResponseRedirect
-from django.views import generic
-#from django.template import RequestContext, loader
+from django.views import generic, View
+from django.template import RequestContext, loader
 
 from .models import Works
 from .forms import NameForm
@@ -20,7 +20,7 @@ class IndexView(generic.TemplateView):
 
 #バイト詳細情報画面
 class DetailView(generic.DetailView):
-	model = Works
+	#model = Works
 	template_name = "works/detail.html"
 
 
@@ -34,3 +34,7 @@ def get_name(request):
 		form = NameForm()
 
 	return render(request, 'name.html', {'form' : form})
+
+
+#バイトフォーム画面
+#class jobform(View):
