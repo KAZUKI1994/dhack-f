@@ -16,7 +16,7 @@ Our team name is *"Hickeys"*.
 | 募集条件         | condition  | CharField     | text        | 例：男性1年など          |
 | 募集校地         | canvas     | CharField     | checkbox    | 今出川or京田辺           |
 | 場所             | location   | CharField     | text        | 校舎・教室               |
-| 募集期間         | work_period | DateField     | date        | 治験バイトを募集する期間 |
+| 勤務期間         | work_period | CharField     | text        | バイトで実際働いてもらいたい期間 |
 | 締め切り         | dead_line  | DateField     | date        | 募集締め切り期間         |
 | 対応可能時間     | can_time   | DateField     | radio       | choices                  |
 | 報酬             | pay        | CharField  | number      | 図書券とか時給とか       |
