@@ -1,6 +1,84 @@
-{% load staticfiles %}
+{% extends "base.html" %}
 
-<link rel="stylesheet" href="{% static 'works/style.css' %}" />
+{% block title %}Shinjima.com{% endblock %}
+
+{% block page_header %}Shinjima.com {% endblock %}
+
+{% block content %}
+<div class="row">
+      <div class="col-xs-6 col-md-3">
+        <div class="list-group">
+          <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading"><i class="glyphicon glyphicon-education"></i>バイオリンが弾ける
+            </h4>
+            <p class="list-group-item-text" align="right">図書券1000円</p>
+          </a>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="list-group">
+          <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading"><i class="glyphicon glyphicon-cutlery"></i>生協バイト
+            </h4>
+            <p class="list-group-item-text" align="right">図書券1000円</p>
+          </a>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="list-group">
+          <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading"><i class="glyphicon glyphicon-floppy-disk"></i>PCバイト
+            </h4>
+            <p class="list-group-item-text" align="right">図書券1000円</p>
+          </a>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="list-group">
+          <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading"><i class="glyphicon glyphicon-pencil"></i>補助バイト
+            </h4>
+            <p class="list-group-item-text" align="right">図書券1000円</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <section>
+      <div class="page-header">
+        <h1>カテゴリー</h1>
+      </div>
+      <div class="row container">
+        <div class="col-md-3" align="center"><a href="category-hikennsya.html"><i class="glyphicon glyphicon-education"></i>
+          被験者バイト</a>
+        </div>
+        <div class="col-md-3" align="center"><a href=""><i class="glyphicon glyphicon-cutlery"></i>
+          生協バイト</a>
+        </div>
+        <div class="col-md-3" align="center"><a href=""><i class="glyphicon glyphicon-floppy-disk"></i>
+          PCバイト</a>
+        </div>
+        <!--fontAwesomeで入れたいのがあったけど入れ方がわからず-->
+        <div class="col-md-3" align="center"><a href=""><i class="glyphicon glyphicon-pencil"></i>
+          補助バイト</a>
+        </div>
+        <div class="col-md-3" align="center"><a href=""><i class="glyphicon glyphicon-tree-deciduous"></i>
+          京田辺</a>
+        </div>
+        <div class="col-md-3" align="center"><a href=""><i class="glyphicon glyphicon-star-empty"></i>
+          今出川</a>
+        </div>
+      </div>
+    </section>
+
+    <aside>
+      <h1>説明</h1>
+      <p>このサイトは同志社大学および同志社女子大学の学内バイト情報をまとめたものです。
+      学内メールアドレスを登録することでバイト情報の取得や募集を行えます。
+      </p>
+      
+    </aside>
+<!-- バイト情報まとめ -->
 {% if new_archieve_list %}
 	<ul>
 		{% for work in new_archieve_list %}
@@ -10,3 +88,6 @@
 {% else %}
 	<p>募集バイト情報はありません。</p>
 {% endif %}
+
+{% endblock %}
+

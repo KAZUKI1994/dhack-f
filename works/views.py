@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.views import generic
 #from django.template import RequestContext, loader
 
 from .models import Works
+from .forms import NameForm
 
 # Create your views here.
 #トップ画面
@@ -18,3 +19,18 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
 	model = Works
 	template_name = "works/detail.html"
+
+class NameAdminView(generic.DetailView):
+	model = Works
+	template_name = "works/name.html"
+
+#ユーザー情報
+def get_name(request):
+	if request.method == 'POST':
+		form = NameForm(request.POST)
+		if form.is_valid():
+			return HttpResponseRedirect('/thanks/')
+	else:
+		form = NameForm()
+
+	return render(request, 'name.html', {'form' : form})
