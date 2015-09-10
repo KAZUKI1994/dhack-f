@@ -1,0 +1,38 @@
+{% extends "base_generic.html" %}
+
+
+
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+
+{% block title %}Job Form{% endblock %}
+
+
+{% block page_header %}Shinjima.com{% endblock %}
+
+
+
+
+{% block content %}
+
+    {# Display a form #}
+    <form role="form" action="/url/to/submit/" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">
+        {% bootstrap_icon "send" %} Submit
+        </button>
+    {% endbuttons %}
+    </form>
+
+    {# Read the documentation for more information #}
+{% endblock %}
