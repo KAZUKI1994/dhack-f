@@ -1,6 +1,9 @@
 from django.db import models
 from datetime import datetime
 from django.utils import timezone
+from django.forms.models import BaseModelFormSet
+from django.forms import ModelForm
+
 
 # Create your models here.
 
@@ -34,4 +37,13 @@ class Works(models.Model):
 	category = models.IntegerField(choices=CATEGORY_CHOICE)
 	
 	#top_image = models.FilePathField(upload_to=None, max_length=100)
+class WorksForm(ModelForm):
+	class Meta:
+		model = Works
+		fields = '__all__'
+
+class BaseWorksFormSet(BaseModelFormSet):
+	def __init__(self, *args, **kwargs):
+		super(BaseWorksFormSet, self).__init__(*args, **kwargs)
+		self.queryset = Works.objects.filter(name__startswith='O')
 

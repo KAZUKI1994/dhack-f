@@ -1,2 +1,12 @@
 {% extends "base_generic.html" %}
+{% load staticfiles %}
 
+{% block title %}バイト投稿フォーム-Shinjima.com-{% endblock %}
+
+{% block page_header %}バイト投稿フォーム{% endblock %}
+
+{% block content %}
+<form method="POST" action="">
+  	{{ formset }} 
+</form>
+{% endblock %}

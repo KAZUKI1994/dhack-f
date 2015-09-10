@@ -3,9 +3,10 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.views import generic
 from django.template import RequestContext, loader
 from django.templatetags.static import static
-
-from .models import Works
-from .forms import NameForm
+from django.views.generic.edit import FormView
+from django.forms.models import modelformset_factory
+from .models import Works, WorksForm
+from .forms import ContactForm
 
 # Create your views here.
 #トップ画面
@@ -24,6 +25,7 @@ class IndexView(generic.ListView):
 	}
 
 
+
 	def get_queryset(self):
 		return Works.objects.order_by('dead_line')[:10]
 
@@ -33,17 +35,25 @@ class DetailView(generic.DetailView):
 	template_name = "works/detail.html"
 
 
-#ユーザー情報
-def get_name(request):
-	if request.method == 'POST':
-		form = NameForm(request.POST)
-		if form.is_valid():
-			return HttpResponseRedirect('/thanks/')
-	else:
-		form = NameForm()
-
-	return render(request, 'name.html', {'form' : form})
-
 
 #バイトフォーム画面
-#class jobform(View):
+def jobform(request):
+	JobFormSet = modelformset_factory(Works, fields="__all__")
+	if request.method == "POST":
+		formset = JobFormSet(request.POST, request.FILES)
+		if formset.is_valid():
+			formset.save()
+	else:
+		formset = JobFormSet()
+	return render_to_response("works/jobform.html", {"formset":formset})
+
+
+#コンタクトフォーム
+class ContactView(FormView):
+	template_name = "contact.html"
+	form_class = ContactForm
+	success_url = '/thanks/'
+
+	def form_valid(self, form):
+		form.send_email()
+		return super(ContactView, self).form_valid(form)
