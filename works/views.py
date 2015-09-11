@@ -2,27 +2,21 @@ from django.shortcuts import render, render_to_response, get_object_or_404
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.views import generic
 from django.template import RequestContext, loader
-<<<<<<< HEAD
-=======
 
->>>>>>> 54a0fd93c59901ae7dde160a2ca48d9acc726769
 from django.templatetags.static import static
 from django.views.generic.edit import FormView
 from django.forms.models import modelformset_factory
 from .models import Works, WorksForm
 from .forms import ContactForm
-<<<<<<< HEAD
 from django.core.context_processors import csrf
 from django.views.decorators.csrf import csrf_protect
 
 from .models import Works
 from .forms import UserForm
 
-=======
 
 from .models import Works
 from .forms import UserForm
->>>>>>> 54a0fd93c59901ae7dde160a2ca48d9acc726769
 
 # Create your views here.
 #トップ画面
@@ -74,10 +68,6 @@ class ContactView(FormView):
 	form_class = ContactForm
 	success_url = '/thanks/'
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 54a0fd93c59901ae7dde160a2ca48d9acc726769
 	def form_valid(self, form):
 		form.send_email()
 		return super(ContactView, self).form_valid(form)
@@ -89,7 +79,4 @@ def userform(request):
     form = UserForm()
 
     return render(request,'works/jobform.html',{'form':form})
-<<<<<<< HEAD
-=======
 
->>>>>>> 54a0fd93c59901ae7dde160a2ca48d9acc726769
