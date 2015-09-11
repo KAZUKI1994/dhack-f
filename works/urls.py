@@ -6,13 +6,7 @@ urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name="detail"),
     url(r'^jobform/$', views.jobform ,name="jobform"),
-<<<<<<< HEAD
 	url(r'^contact/$', views.FormView.as_view(), name='contact'),
 	url(r'^form/',views.userform,name="jobform")
 ] 
-    
-=======
-    url(r'^contact/$', views.FormView.as_view(), name='contact'),
-    url(r'^form/',views.userform,name="jobform")
-]
->>>>>>> 54a0fd93c59901ae7dde160a2ca48d9acc726769
+  
