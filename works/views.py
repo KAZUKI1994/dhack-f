@@ -52,8 +52,8 @@ def jobform(request):
 			formset.save()
 	else:
 		formset = JobFormSet()
-	#ctxt = RequestContext(request, {})
-	return render_to_response("works/jobform.html", {"formset":formset})
+	ctxt = RequestContext(request, {})
+	return render_to_response("works/jobform.html", {"formset":formset}, ctxt)
 
 #カテゴリー別一覧画面
 
