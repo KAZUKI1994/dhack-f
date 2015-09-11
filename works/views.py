@@ -67,7 +67,37 @@ def jobform(request):
 		formset = JobFormSet()
 	ctxt = RequestContext(request, {})
 	return render_to_response("works/jobform.html", {"formset":formset}, ctxt)
-	
+	return redirect('works/index.html')
+'''
+#新規登録画面
+@csrf_protect
+def userform(request):
+	c={}
+	UserFormSet = modelformset_factory(User, fields="__all__")
+	if request.method == "POST":
+		formset1 = UserFormSet(request.POST, request.FILES)
+		if formset1.is_valid():
+			formset1.save()
+	else:
+		formset1 = UserFormSet()
+	ctxt = RequestContext(request, {})
+	return render_to_response("works/register.html", {"formset1":formset1}, ctxt)	
+
+'''
+#申し込み画面
+@csrf_protect
+def userform(request):
+	c={}
+	UserFormSet = modelformset_factory(User, fields="__all__")
+	if request.method == "POST":
+		formset1 = UserFormSet(request.POST, request.FILES)
+		if formset1.is_valid():
+			formset1.save()
+	else:
+		formset1 = JoinFormSet()
+	ctxt = RequestContext(request, {})
+	return render_to_response("works/detail.html", {"formset":formset}, ctxt)
+	return redirect('works/index.html')	
 #カテゴリー別一覧画面
 
 

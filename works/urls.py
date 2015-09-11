@@ -10,5 +10,6 @@ urlpatterns = [
 	#url(r'^form/',views.userform,name="jobform")
 	url(r'^register/$',views.register, name="register"),
 	url(r'^login/$',views.login, name="login"),
+	#url(r'^(?P<pk>[0-9]+)/join/$', views.joinform, name="join"),
 ] 
 

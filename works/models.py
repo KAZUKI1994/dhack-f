@@ -37,11 +37,18 @@ class Works(models.Model):
 	pay = models.CharField(max_length=20)
 
 
-class User(model.Model):
-	
+class User(models.Model):
+	GRADES = (
+		(1, "1回生"),
+		(2, "1回生"),
+		(3, "1回生"),
+		(4, "1回生"),
+		(5, "院1回生"),
+		(6, "院1回生"),		
+		)
 	name = models.CharField(max_length=10)
 	email = models.EmailField(max_length=245)
-	grade = models.CharField(max_length=2, choices=GRADES)
+	grade = models.IntegerField(choices=GRADES)
 
 	
 	#top_image = models.FilePathField(upload_to=None, max_length=100)
@@ -50,8 +57,16 @@ class WorksForm(ModelForm):
 		model = Works
 		fields = "__all__"
 
+class UserForm(ModelForm):
+	class Meta:
+		model = User
+		fields = "__all__"
+
+
+'''
 class BaseWorksFormSet(BaseModelFormSet):
 	def __init__(self, *args, **kwargs):
 		super(BaseWorksFormSet, self).__init__(*args, **kwargs)
 		self.queryset = Works.objects.filter(name__startswith='O')
+'''
 

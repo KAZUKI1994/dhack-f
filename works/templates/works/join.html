@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+{% load staticfiles %}
+{% load bootstrap %}
+
+{% block title %}申し込みフォーム-Shinjima.com-{% endblock %}
+
+{% block page_header %}申し込みフォーム{% endblock %}
+
+{% block content %}
+<h1>申し込みフォーム</h1>
+<form role="form" method="POST" action="">{% csrf_token %}
+  	{{ formset2|bootstrap }} 
+	<div class="form-group">
+		<button type="submit" class="btn btn-primary">投稿</button>
+	</div>
+</form>
