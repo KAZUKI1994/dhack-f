@@ -15,8 +15,6 @@ from .models import Works
 from .forms import UserForm
 
 
-from .models import Works
-from .forms import UserForm
 
 from django.core.mail import send_mail
 import json
@@ -45,7 +43,6 @@ class IndexView(generic.ListView):
 
 
 class DetailView(generic.DetailView):
-<<<<<<< HEAD
 	model = Works
 	template_name = "works/detail.html"
 	slug_url_kwarg = 'detail'
@@ -58,26 +55,6 @@ def register(request):
 #ログイン画面
 def login(request):
 	return render(request, 'works/login.html')
-
-#バイトフォーム画面
-@csrf_protect
-def jobform(request):
-	c={}
-	JobFormSet = modelformset_factory(Works, fields="__all__")
-	if request.method == "POST":
-		formset = JobFormSet(request.POST, request.FILES)
-		if formset.is_valid():
-			formset.save()
-	else:
-		formset = JobFormSet()
-	ctxt = RequestContext(request, {})
-	return render_to_response("works/jobform.html", {"formset":formset}, ctxt)
-	
-#カテゴリー別一覧画面
-=======
-    #model = Works
-    template_name = "works/detail.html"
-
 
 # バイトフォーム画面
 @csrf_protect
@@ -95,33 +72,6 @@ def jobform(request):
         formset = JobFormSet()
         ctxt = RequestContext(request, {})
         return render_to_response("works/jobform.html", {"formset": formset}, ctxt)
->>>>>>> 4bf741659fc1deb9c6b5b6131389c99bbe49bad3
-
-# カテゴリー別一覧画面
-
-<<<<<<< HEAD
-#コンタクトフォーム
-'''
-=======
-
-# コンタクトフォーム
->>>>>>> 4bf741659fc1deb9c6b5b6131389c99bbe49bad3
-class ContactView(FormView):
-    template_name = "contact.html"
-    form_class = ContactForm
-    success_url = '/thanks/'
-
-    def form_valid(self, form):
-        form.send_email()
-        return super(ContactView, self).form_valid(form)
-
-<<<<<<< HEAD
-	def form_valid(self, form):
-		form.send_email()
-		return super(ContactView, self).form_valid(form)
-'''
-
-=======
 # バイトフォーム画面
 # class jobform(View):
 
@@ -130,4 +80,3 @@ def userform(request):
     form = UserForm()
 
     return render(request, 'works/jobform.html', {'form': form})
->>>>>>> 4bf741659fc1deb9c6b5b6131389c99bbe49bad3
