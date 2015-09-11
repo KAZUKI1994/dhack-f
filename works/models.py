@@ -20,6 +20,7 @@ class Works(models.Model):
 		(2, u'PCバイト'),
 		(3, u'授業補助'),
 		(4, u"イベント"),
+                (5,'その他'),
 	)
 	
 	title = models.CharField(max_length=30)
