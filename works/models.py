@@ -20,11 +20,7 @@ class Works(models.Model):
 		(2, u'PCバイト'),
 		(3, u'授業補助'),
 		(4, u"イベント"),
-<<<<<<< HEAD
 		(5, u"その他"),
-=======
-                (5,'その他'),
->>>>>>> 4bf741659fc1deb9c6b5b6131389c99bbe49bad3
 	)
 	
 	title = models.CharField(max_length=30)
@@ -41,11 +37,11 @@ class Works(models.Model):
 	pay = models.CharField(max_length=20)
 
 
-class User(model.Model):
+class User(models.Model):
 	
 	name = models.CharField(max_length=10)
 	email = models.EmailField(max_length=245)
-	grade = models.CharField(max_length=2, choices=GRADES)
+	#grade = models.CharField(max_length=2, choices=GRADES)
 
 	
 	#top_image = models.FilePathField(upload_to=None, max_length=100)
