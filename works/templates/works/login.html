@@ -1,0 +1,35 @@
+{% extends "base_generic.html" %}
+{% load staticfiles %}
+{% load bootstrap %}
+
+{% block title %}ログイン-Shinjima.com-{% endblock %}
+
+{% block page_header %}ログイン{% endblock %}
+
+{% block content %}
+
+<div id="main" class="container">
+  <h1>ログイン</h1>
+  <form action="" method="post">
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label for="name" maxlength="20">名前</label>
+        <input type="text" class="form-control" id="name"  size="50"maxlength="30" placeholder="name">
+      </div>
+    </div>
+     
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" value="@mail4.doshisha.ac.jp" maxlength="30" placeholder="mail address">
+      </div>s
+    </div>
+    <div class="row">
+      <div class="form-group col-md-4">
+        <button type="submit" class="btn btn-info">送信<i class="glyphicon glyphicon-ok"></i></button>
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

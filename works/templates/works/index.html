@@ -17,17 +17,19 @@
             <div class="list-group">
               <a href="/works/{{ work.id }}" class="list-group-item">
                 <h4 class="list-group-item-heading">
-                <!-- imageを出力 -->
+                <!-- imageを出力（ああ汚い〜） -->
                 {% if work.category == 0 %}
-                <img src="{% static 'images/img0.png' %}"  class="img-responsive" width="100px" height="100px" alt="a" style="margin:0 auto">
+                <img src="{% static 'images/hurasuko.png' %}"  class="img-responsive" width="100px" height="100px" alt="a" style="margin:0 auto">
                 {% elif work.category == 1 %}
-                	<img src="{% static 'images/img1.png' %}"  class="img-responsive" width="100px" height="100px" alt="a" style="margin:0 auto">
+                	<img src="{% static 'images/food.png' %}"  class="img-responsive" width="100px" height="100px" alt="a" style="margin:0 auto">
                 {% elif work.category == 2 %}
-                	<img src="{% static 'images/img2.png' %}"  class="img-responsive" width="100px" height="100px" alt="a" style="margin:0 auto">
+                	<img src="{% static 'images/kurumaisu_360.png' %}"  class="img-responsive" width="100px" height="100px" alt="a" style="margin:0 auto">
                 {% elif work.category == 3 %}
-                	<img src="{% static 'images/img3.png' %}"  class="img-responsive" width="100px" height="100px" alt="a" style="margin:0 auto">
+                	<img src="{% static 'images/PC.png' %}"  class="img-responsive" width="100px" height="100px" alt="a" style="margin:0 auto">
+                {% elif work.category == 4 %}
+                	<img src="{% static 'images/ivent.png' %}"  class="img-responsive" width="100px" height="100px" alt="a" style="margin:0 auto">
                 {% else %}
-                	<img src="{% static 'images/img4.png' %}"  class="img-responsive" width="100px" height="100px" alt="a" style="margin:0 auto">
+                  <img src="{% static 'images/sonota.png' %}"  class="img-responsive" width="100px" height="100px" alt="a" style="margin:0 auto">
                 {% endif %}
                 </h4>
                 <p class="list-group-item-text" align="center">{{ work.pay }}</p>
@@ -45,34 +47,43 @@
       <div id="categoly">
         <h1>カテゴリー</h1>
         <div class="row">
-	          <div class="col-md-3" align="center"><a href=""><img src="hurasuko.png" width="10px" height="10px" alt="a">
+	          <div class="col-md-3" align="center"><a href="/works/{{ work.category }}"><img src="{% static 'images/hurasuko.png' %}" width="10px" height="10px" alt="a">
 	            被験者バイト</a>
           </div>
-          <div class="col-md-3" align="center"><a href=""><img src="food.png" width="10px" height="10px" alt="a">
+          <div class="col-md-3" align="center"><a href=""><img src="{% static 'images/food.png' %}" width="10px" height="10px" alt="a">
             生協バイト</a>
           </div>
-          <div class="col-md-3" align="center"><a href=""><img src="PC.png" width="10px" height="10px" alt="a">
+          <div class="col-md-3" align="center"><a href=""><img src="{% static 'images/PC.png' %}" width="10px" height="10px" alt="a">
             PCバイト</a>
           </div>
-          <div class="col-md-3" align="center"><a href=""><img src="kurumaisu_360.png" width="10px" height="10px" alt="a">
+          <div class="col-md-3" align="center"><a href=""><img src="{% static 'images/kurumaisu_360.png' %}" width="10px" height="10px" alt="a">
             補助バイト</a>
           </div>
+          <div class="col-md-3" align="center"><a href="category-event.html"><img src="{% static 'images/ivent.png' %}" width="15px" height="15px" alt="a">
+            イベント</a>
+          </div>
+          <div class="col-md-3" align="center"><a href="category-sonohoka.html"><img src="{% static 'images/sonota.png' %}" width="15px" height="15px" alt="a">
+            その他</a>
+          </div>
 
-          <div class="col-md-3" align="center"><a href=""><img src="clover_360.png" width="10px" height="10px" alt="a">
+          <div class="col-md-3" align="center"><a href=""><img src="{% static 'images/clover_360.png' %}" width="10px" height="10px" alt="a">
             京田辺</a>
           </div>
-          <div class="col-md-3" align="center"><a href=""><img src="heart_360.png" width="10px" height="10px" alt="a">
+          <div class="col-md-3" align="center"><a href=""><img src="{% static 'images/heart_360.png' %}" width="10px" height="10px" alt="a">
             今出川</a>
           </div>
         </div>
       </div>
 
       <div id="about">
-        <h1>説明</h1>
-        <p>このサイトは同志社大学および同志社女子大学の学内バイト情報をまとめたものです。
-        学内メールアドレスを登録することでバイト情報の取得や募集を行えます。
+        <h1>Shinjima.comとは</h1>
+        <p>同志社大学生、同志社女子大学生限定の学内アルバイト紹介サイトです。<br>
+        大学専用メールアドレスで登録することで学内アルバイトへの応募や募集が行えます。
         </p>
-        
+        <div id="how">
+        <h1>使い方</h1>
+        <img src="{% static 'images/how.png' %}" align="center"></img>
+      </div>
       </div>
     </div>
 	

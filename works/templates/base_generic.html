@@ -18,13 +18,13 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="{% static 'css/topstyle1.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico'">
 
 </head>
 
 <body>
-<div class="page-header">
-    <h1>{% block page_header %}{% endblock %}<small> supported by Hickies</small></h1>
-</div>
+<img src="{% static 'images/header.jpg' %}" alt="top_toshokan" align="center" width="100%">
 <header>
    <nav class="navbar navbar-default">
    <div class="container">
@@ -35,15 +35,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href=""></a>
+       <a class="navbar-brand" href="/works/"><img src="{% static 'images/logo2.png' %}"></a>
     </div>
 
     <div class="collapse navbar-collapse target">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="{% url 'works:index' %}">ホーム</a></li>
-        <li><a href="register.html">新規登録</a></li>
-        <li><a href="login.html">ログイン</a></li>
-        <li><a href="bite.html">バイト募集</a></li>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/works/">ホーム</a></li>
+        <li><a href="/works/register/">新規登録</a></li>
+        <li><a href="/works/login/">ログイン</a></li>
+        <li><a href="/works/jobform/">バイト募集</a></li>
       </ul>
     </div>
     </div>
@@ -56,10 +56,10 @@
 {% endblock %}
 
 <footer align="center">
-	<a href="register.html" target="_blank">新規登録</a>
-	<a href="login.html" target="_blank">ログイン</a>
-	<a href="bite.html" target="_blank">バイト募集</a>
-	<a href="top.html"> ホームへ</a>
+	<a href="/works/register/" target="_blank">新規登録</a>
+	<a href="/works/login/" target="_blank">ログイン</a>
+	<a href="/works/jobform/" target="_blank">バイト募集</a>
+	<a href="/works/"> ホームへ</a>
 	<p>&copy;Copyright Shinjima.com all rights reserved.</p>
 </footer>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

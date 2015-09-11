@@ -1,0 +1,67 @@
+{% extends "base_generic.html" %}
+{% load staticfiles %}
+{% load bootstrap %}
+
+{% block title %}新規登録|Shinjima.com{% endblock %}
+
+{% block page_header %}新規登録{% endblock %}
+
+{% block content %}
+<div id="main" class="container">
+  <h1>新規登録</h1>
+  <form action="" method="post">
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label for="name" maxlength="20">名前</label>
+        <input type="text" class="form-control" id="name"  size="50"maxlength="30" placeholder="name">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label for="gakubu">学部</label>
+        <select name="gakubu" class="form-control" id="gakubu">
+          <option value="shinn">神学部</option>
+          <option value="bunn">文学部</option>
+          <option value="syakai">社会学部</option>
+          <option value="hou">法学部</option>
+          <option value="keizai">経済学部</option>
+          <option value="syou">商学部</option>
+          <option value="seisaku">政策学部</option>
+          <option value="gurouti">グローバル地域文化学部</option>
+          <option value="bunnzyou">文化情報学部</option>
+          <option value="rikou">理工学部</option>
+          <option value="seimei">生命医科学部</option>
+          <option value="supokenn">スポーツ健康科学部</option>
+          <option value="shinnri">心理学部</option>
+          <option value="gurokomyu">グローバルコミュニケーション学部</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label for="gakunenn">学年</label>
+        <select name="gakunenn" class="form-control" id="gakunenn">
+          <option value="1kaisei">１回生</option>
+          <option value="2kaisei">２回生</option>
+          <option value="3kaisei">３回生</option>
+          <option value="4kaisei">４回生</option>
+          <option value="innsei">院生</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" value="@doshisha4.ac.jp" maxlength="30" placeholder="mail address">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-4">
+        <button type="submit" class="btn btn-info">送信<i class="glyphicon glyphicon-ok"></i></button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}
+

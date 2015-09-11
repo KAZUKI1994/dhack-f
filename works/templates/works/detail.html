@@ -1,13 +1,26 @@
-<h1>{{ works.title }}</h1>
-<ul>
-	<li>募集者 : {{ works.publisher }}</li>
-	<li>募集内容 : {{ works.content }}</li>
-	<li>募集条件 : {{ works.condition }}</li>
-	<li>募集校地 : {{ works.canvas }}</li>
-	<li>実施場所 : {{ works.location }}</li>
-	<li>開始日時 : {{ works.work_start }}</li>
-	<li>終了日時 : {{ works.work_finish }}</li>
-	<li>報酬 : {{ works.money_kind }}{{ works.money_amount }}</li>
-</ul>
-<input type="submit" value="申し込む"></input>
-<input type="button" value="戻る"></input>
+{% extends "base_generic.html" %}
+{% load staticfiles %}
+{% load bootstrap %}
+
+{% block title %}詳細ページ|Shinjima.com{% endblock %}
+
+{% block page_header %}詳細ページ{% endblock %}
+
+{% block content %}
+<article>
+<div id="main" class="container">
+  	<h1>{{ works.title }}</h1>
+  	<ul>
+      	<li>募集対象　：{{ works.condition }}</li>
+      	<li>カテゴリー：{{ works.category }}</li>
+      	<li>実施校地　：{{ works.canpus }}</li>
+		<li>募集者　　：{{ works.publisher }}</li>
+		<li>募集場所　：{{ works.location }}</li>
+		<li>詳細情報　：{{ works.content }}</li>
+		<li>報酬     ：{{ works.pay }}</li>
+		<li>募集締切　：{{ works.dead_line }}</li>
+	</ul>
+	<input type="submit" value="申し込む"></input>
+</div>
+</article>
+{% endblock %}
