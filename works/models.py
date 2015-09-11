@@ -23,24 +23,23 @@ class Works(models.Model):
 	)
 	
 	title = models.CharField(max_length=30)
+	category = models.IntegerField(choices=CATEGORY_CHOICE)
 	publisher = models.CharField(max_length=20)
 	pub_phone = models.IntegerField()
 	pub_mail = models.EmailField(max_length=254)
 	content = models.TextField()
 	condition = models.CharField(max_length=100)
-	canvas = models.IntegerField(choices=CANPUS_CHOICE)
+	canpus = models.IntegerField(choices=CANPUS_CHOICE)
 	location = models.CharField(max_length=100)
-	work_period = models.DateField()
+	work_period = models.CharField(max_length=300)
 	dead_line = models.DateField()
-	can_time = models.DateField()
 	pay = models.CharField(max_length=20)
-	category = models.IntegerField(choices=CATEGORY_CHOICE)
 	
 	#top_image = models.FilePathField(upload_to=None, max_length=100)
 class WorksForm(ModelForm):
 	class Meta:
 		model = Works
-		fields = '__all__'
+		fields = "__all__"
 
 class BaseWorksFormSet(BaseModelFormSet):
 	def __init__(self, *args, **kwargs):

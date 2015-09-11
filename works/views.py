@@ -7,6 +7,8 @@ from django.views.generic.edit import FormView
 from django.forms.models import modelformset_factory
 from .models import Works, WorksForm
 from .forms import ContactForm
+from django.core.context_processors import csrf
+from django.views.decorators.csrf import csrf_protect
 
 from .models import Works
 from .forms import UserForm
@@ -41,6 +43,7 @@ class DetailView(generic.DetailView):
 
 
 #バイトフォーム画面
+@csrf_protect
 def jobform(request):
 	JobFormSet = modelformset_factory(Works, fields="__all__")
 	if request.method == "POST":
@@ -49,7 +52,10 @@ def jobform(request):
 			formset.save()
 	else:
 		formset = JobFormSet()
+	#ctxt = RequestContext(request, {})
 	return render_to_response("works/jobform.html", {"formset":formset})
+
+#カテゴリー別一覧画面
 
 
 #コンタクトフォーム
